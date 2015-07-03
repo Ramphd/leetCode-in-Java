@@ -12,7 +12,7 @@ public class TwoSum {
 		return new int[] { map.get(target - x) + 1, i + 1 };
 		}
 		map.put(x, i);
-		}
+		}//
 		throw new IllegalArgumentException("No two sum solution");
 		}
 
