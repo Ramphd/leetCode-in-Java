@@ -13,8 +13,11 @@ import java.util.List;
  */
 public class MedianofTwoSortedArrays {
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-		int m = nums1.length;
-        int n = nums2.length;
+		int a[] = nums1;
+		int b[] = nums2;
+		int m = a.length;
+        int n = b.length;
+        int totalLength = m+n;
         ArrayList<Integer> al = new ArrayList<Integer>();
         
         
