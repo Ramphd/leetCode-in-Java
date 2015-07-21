@@ -11,25 +11,27 @@ Did you notice that the reversed integer might overflow? Assume the input is a 3
 then the reverse of 1000000003 overflows.How should you handle such cases?
 For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
  */
-import static java.lang.Math.*;
-
 public class ReverseInteger {
 	public static int reverse(int x) { 
 		if(x == 0) return x;
-		int max = Integer.MAX_VALUE;
-		int min = Integer.MIN_VALUE;
-		boolean negative = false;
-		if(x < 0) negative  = true;
-		char[] a  = String.valueOf(abs(x)).toCharArray();
-		char[] b = new char[a.length];
-		for(int i = a.length -1 ; i >=0 ; i--)
-			b[a.length -1 - i] = a[i];
-		System.out.println();
-		return Integer.parseInt("56566");
+//		int result = 0;
+		long reTemp = 0;
+//		boolean negative = false;
+//		if(x < 0) negative  = true;
+		while (x != 0 ){
+			reTemp = 10 * reTemp + x % 10;
+			x /= 10;
+		}
+
+		if(reTemp > Integer.MAX_VALUE || reTemp < Integer.MIN_VALUE)
+			return 0;
+		
+		return (int)reTemp;
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(reverse(-234));
+		System.out.println(reverse(-2345));
+		System.out.println(Integer.MAX_VALUE);
 		//System.out.println(Integer.MIN_VALUE);
 		
 	}
